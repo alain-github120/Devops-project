@@ -1,5 +1,8 @@
 Pipeline{
     agent any
+    tools{
+        maven 'maven3.96'
+    }
     stages{
         stage('Git Checkout'){
             steps{
@@ -7,6 +10,14 @@ Pipeline{
 
             }
         }
+         stage('Build maven application'){
+            steps{
+                sh 'mvn clean install'
+
+            }
+        }
+
+
     }
 
     
