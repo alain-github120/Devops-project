@@ -1,10 +1,10 @@
 Pipeline{
     agent any
     stages{
-        stage('clonefromscm'){
+        stage('Git Checkout'){
             steps{
                 git url:'https://github.com/alain-github120/Devops-project.git',branch:'nel'
-                 
+
             }
         }
     }
