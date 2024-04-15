@@ -3,4 +3,11 @@ node{
     stage('clonefromscm'){
        git branch: 'alain', url: 'https://github.com/alain-github120/Devops-project.git' 
     }
+
+    stage('TEST & PACKAGE-SOURCECODE'){
+       sh "${MavenHome}/bin/mvn  clean package" 
+    }
+
+
+
 }
