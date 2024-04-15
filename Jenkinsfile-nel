@@ -8,6 +8,10 @@ node{
        sh "${mavenHome}/bin/mvn  clean package" 
     }
 
+    stage('CODE-QUALITY-INSPECTION'){
+       sh "${mavenHome}/bin/mvn  sonar:sonar" 
+    }
+
 
 
 }
