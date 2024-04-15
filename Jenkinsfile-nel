@@ -11,6 +11,10 @@ node{
     stage('CODE-QUALITY-INSPECTION'){
        sh "${mavenHome}/bin/mvn  sonar:sonar" 
     }
+stage('UPLOAD ARTIFACT TO NEXUS'){
+       sh "${mavenHome}/bin/mvn  deploy" 
+    }
+
 
 
 
