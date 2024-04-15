@@ -1,13 +1,11 @@
 node{
-    tool{
-        maven 'maven3.9.6'
-    }
+       def  mavenHome = tool name: 'maven3.9.6'
     stage('clonefromscm'){
        git branch: 'alain', url: 'https://github.com/alain-github120/Devops-project.git' 
     }
 
     stage('TEST & PACKAGE-SOURCECODE'){
-      sh 'mvn clean package'
+       sh "${mavenHome}/bin/mvn  clean package" 
     }
 
 
