@@ -1,24 +1,9 @@
-Pipeline{
-    agent any
-    tools{
-        maven 'maven3.96'
-    }
-    stages{
-        stage('Git Checkout'){
-            steps{
-                git url:'https://github.com/alain-github120/Devops-project.git',branch:'nel'
-
-            }
-        }
-         stage('Build maven application'){
-            steps{
-                sh 'mvn clean install'
-
-            }
-        }
-
-
-    }
-
+node{
+    def  mavenHome = tool name: 'maven3.9.6'
+    stage('ClonefromSCM'){
+        git branch: 'nel', url: 'https://github.com/alain-github120/Devops-project.git'
     
+    }     
+
 }
+       
