@@ -20,7 +20,7 @@ stage('UPLOAD ARTIFACT TO NEXUS'){
        deploy adapters: [tomcat9(credentialsId: 'dev', path: '', url: 'http://18.212.73.43:8009/')], contextPath: 'Bookstore', war: 'target/*war'
     }
 
-    stage('DEPLOY TO TEST'){
+    stage('DEPLOY TO TEST-Env'){
        sh "echo 'deploy to tomcat dev-environment"
        deploy adapters: [tomcat9(credentialsId: 'dev', path: '', url: 'http://18.212.73.43:8009/')], contextPath: 'Test-env', war: 'target/*war'
     }
