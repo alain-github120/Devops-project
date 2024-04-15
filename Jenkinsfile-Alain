@@ -1,0 +1,7 @@
+node{
+    def mavenHome = tool name: 'maven3.9.6'
+    stage('ClonefromSCM'){
+        https://github.com/alain-github120/Devops-project.git
+        
+    }
+}
