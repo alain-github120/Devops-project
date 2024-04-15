@@ -15,6 +15,16 @@ stage('UPLOAD ARTIFACT TO NEXUS'){
        sh "${mavenHome}/bin/mvn  deploy" 
     }
 
+    stage('DEPLOY TO SERVER'){
+       sh "echo 'deploy to tomcat dev-environment"
+       deploy adapters: [tomcat9(credentialsId: 'dev', path: '', url: 'http://18.212.73.43:8009/')], contextPath: 'Bookstore', war: 'target/*war'
+    }
+
+    stage('DEPLOY TO TEST'){
+       sh "echo 'deploy to tomcat dev-environment"
+       deploy adapters: [tomcat9(credentialsId: 'dev', path: '', url: 'http://18.212.73.43:8009/')], contextPath: 'Test-env', war: 'target/*war'
+    }
+
 
 
 
