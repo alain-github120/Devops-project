@@ -82,7 +82,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>LION TECH ACADEMY Snapshot Nexus Repository </name>
-	      <url>http://35.168.3.16:8081/repository/Alain-snapshots/</url>
+	      <url></url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
